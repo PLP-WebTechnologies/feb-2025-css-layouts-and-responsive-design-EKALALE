@@ -1,4 +1,3 @@
-<-- HTML-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,15 +21,22 @@
   <div class="content">
     <section class="section section-left">Section 1</section>
     <section class="section section-right">Section 2</section>
+    <section class="section section-bottom">Section 3</section>
   </div>
 </body>
 </html>
-<--CSS-->
+
+  
+
+
+
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9;
 }
 
 .navbar {
@@ -56,9 +62,10 @@ body {
   font-size: 18px;
 }
 
+/* Grid Layout for Main Content */
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
   gap: 20px;
   padding: 20px;
 }
@@ -69,21 +76,41 @@ body {
   border-radius: 8px;
 }
 
+.section-left {
+  background-color: #ffcccb;
+}
+
+.section-right {
+  background-color: #cce7ff;
+}
+
+.section-bottom {
+  background-color: #c2f0c2;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout for tablet screens */
   }
 }
 
 @media (max-width: 480px) {
   .navbar ul {
-    flex-direction: column;
+    flex-direction: column; /* Stack navbar items vertically on mobile */
     align-items: center;
   }
   
   .navbar li {
     margin: 10px 0;
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .section {
+    padding: 15px;
   }
 }
 
