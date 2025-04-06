@@ -1,26 +1,89 @@
-# CSS Layouts and Responsive Design
+<-- HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-## Objectives
+  <!-- Main Content -->
+  <div class="content">
+    <section class="section section-left">Section 1</section>
+    <section class="section section-right">Section 2</section>
+  </div>
+</body>
+</html>
+<--CSS-->
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-Implement Flexbox and Grid for layout design.
-Make the webpage responsive using media queries.
-Ensure proper alignment and spacing.
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
 
-## Instructions
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-- use Flexbox or CSS Grid.
-- Add a navigation bar and structure the content.
-- Use media queries to adjust layout for mobile, tablet, and desktop.
+.navbar li {
+  margin: 0 15px;
+}
 
->[!NOTE]
->  - Include at least:
->  - navigation bar
->  - media queries
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
 
-# Tasks
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
 
-- Apply Flexbox or Grid for layout.
-- Make the page responsive.
-- Test across different screen sizes.
+.section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-Happy Coding! 💻✨
+/* Media Queries */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar li {
+    margin: 10px 0;
+  }
+}
+
